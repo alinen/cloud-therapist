@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="Skeleton-2.0.4/css/normalize.css">
+<link rel="stylesheet" href="Skeleton-2.0.4/css/skeleton.css">
+<link rel="stylesheet" href="Skeleton-2.0.4/css/custom.css">
+<script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+<script language="javascript" type="text/javascript" src="character.js"></script>
+<script language="javascript" type="text/javascript" src="eliza.js"></script>
+<script>
+  transcript = "Hello. I am your Cloud Therapist. How may I help you?";
+  function onEnter() {
+    var item = document.getElementById("text_input");
+
+    // Compute a response using ELIZA algorithm
+    var response = respond(item.value);
+
+    // Update our character
+    characterTalk(response, 3);
+
+    // Update our HTML page
+    transcript += "<br><div style=\"color:#0a0aff\">&gt; " + item.value+"</div>";
+    transcript += "<br>&gt; " + response;
+
+    var transcriptEle = document.getElementById("transcript");
+    transcriptEle.innerHTML = transcript;
+    item.value = "";
+    return false; // don't reload page
+  }
+
+  function onLoad() {
+    var item = document.getElementById("text_input");
+    item.value = "";
+
+    var transcriptEle = document.getElementById("transcript");
+    transcriptEle.innerHTML = "&gt; " + transcript;
+    characterTalk(transcript, 3);
+  }
+</script>
+</head>
+<body onLoad="onLoad()">
+  <h3>Cloud therapist</h3>
+  <div id="sketch-holder">
+      <!-- Our sketch will go here! -->
+  </div>
+  <form onSubmit="return onEnter();">
+  <input id="text_input" type="text" placeholder="Type your messages here" style="width:700px" onChange=onEnter></input>
+  </form>
+  <h3>Transcript</h3>
+  <p id="transcript">
+  </p>
+  <hr>
+  <b>Credits</b>
+  <p>Demo by Aline Normoyle (alinen) 2022. 
+  <a href="https://web.njit.edu/~ronkowit/eliza.html">ELIZA chatbot</a> by George Dunlop and Kenneth Ronkowitz.
+  Uses <a href="https://p5js.org/">P5js</a> and <a href="http://getskeleton.com/">SkeletonCSS</a>.
+</body>
+</html>
