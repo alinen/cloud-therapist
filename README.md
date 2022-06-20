@@ -1,8 +1,8 @@
 # cloud-therapist
 
-A simple character that can have a conversation with you. Click [here](alinen.github.io/cloud-therapist/cloud-therapist.html) to try the demo.
+A simple character that can have a conversation with you. Click [here](https://alinen.github.io/cloud-therapist/) to try the demo.
 
-![Cloud Therapist](screenshot.png "Your Therapist")
+[![Cloud Therapist](screenshot.png "Your Therapist")](https://alinen.github.io/cloud-therapist/)
 
 This application combines 
 
