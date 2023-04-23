@@ -11,3 +11,5 @@ This application combines
 
 This application was developed as part of a workshop for Bryn Mawr College's 2022 
 [STEM Posse Immersion Program](https://www.brynmawr.edu/inside/offices-services/posse-bryn-mawr).
+
+The Skeleton CSS can be found [here](http://getskeleton.com/). 
